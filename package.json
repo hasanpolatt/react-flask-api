@@ -2,6 +2,7 @@
   "name": "axiostutorial",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -9,13 +10,17 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "venv": "^1.0.1",
+    "virtualenv": "^0.3.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test-api": "cd api && flask test",
+    "eject": "react-scripts eject",
+    "start-api": "cd api && venv/bin/flask run --no-debugger"
   },
   "eslintConfig": {
     "extends": [
