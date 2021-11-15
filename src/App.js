@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from 'react';
 
 function App() {
+
+  const [currentTime, setCurrentTime] = useState(0);
+
+  //setCurrentTime'ı json data isteği ile time nesnesi ile(data.time) güncelleyerek, res.json ile payload'ı JavaScript objesine dönüştürme
+  //Converting payload to JavaScript object with res.json by updating setCurrentTime with json data request with time object(data.time)
+  useEffect(() => {
+    fetch('/time').then(res => res.json()).then(data => {
+      setCurrentTime(data.time);
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +29,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>The current time is {currentTime}.</p>
       </header>
     </div>
   );
