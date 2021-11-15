@@ -9,7 +9,7 @@ function App() {
   //setCurrentTime'ı json data isteği ile time nesnesi ile(data.time) güncelleyerek, res.json ile payload'ı JavaScript objesine dönüştürme
   //Converting payload to JavaScript object with res.json by updating setCurrentTime with json data request with time object(data.time)
   useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
+    fetch('/api/time').then(res => res.json()).then(data => {
       setCurrentTime(data.time);
     });
   }, []);
